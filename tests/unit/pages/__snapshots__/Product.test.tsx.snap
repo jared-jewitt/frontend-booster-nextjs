@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product page matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="root"
+  >
+    <div
+      class="root"
+    >
+      <a
+        href="/login"
+      >
+        Login
+      </a>
+    </div>
+    <main
+      class="main"
+    >
+      <div
+        class="product"
+      >
+        <ul>
+          <li>
+            ID: 123
+          </li>
+          <li>
+            Title: Test product
+          </li>
+          <li>
+            Description: Foo bar baz
+          </li>
+          <li>
+            Price: $99.99
+          </li>
+        </ul>
+      </div>
+    </main>
+  </div>
+</DocumentFragment>
+`;
