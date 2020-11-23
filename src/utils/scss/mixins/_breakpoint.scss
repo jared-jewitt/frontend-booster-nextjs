@@ -1,0 +1,23 @@
+@use "../variables/theme";
+
+@mixin up($breakpoint) {
+  @if map-has-key(theme.$breakpoints, $breakpoint) {
+    $breakpoint-value: map-get(theme.$breakpoints, $breakpoint);
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn "Must specify a valid breakpoint.";
+  }
+}
+
+@mixin down($breakpoint) {
+  @if map-has-key(theme.$breakpoints, $breakpoint) {
+    $breakpoint-value: map-get(theme.$breakpoints, $breakpoint);
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+  } @else {
+    @warn "Must specify a valid breakpoint.";
+  }
+}

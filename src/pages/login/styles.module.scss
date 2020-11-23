@@ -1,0 +1,5 @@
+@use "~@/utils/scss/placeholders/layout" as *;
+
+.root {
+  @extend %full-size-center;
+}

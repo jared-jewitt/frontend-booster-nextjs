@@ -1,0 +1,10 @@
+.root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  margin: 24px;
+  flex-grow: 1;
+}

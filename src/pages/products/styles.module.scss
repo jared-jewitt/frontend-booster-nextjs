@@ -1,0 +1,9 @@
+@use "~@/utils/scss/placeholders/layout" as *;
+
+.products {
+  @extend %full-size-center;
+}
+
+.product {
+  @extend %full-size-center;
+}

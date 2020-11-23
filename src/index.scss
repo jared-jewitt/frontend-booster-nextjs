@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "~@/utils/scss/variables/theme";
+
+@font-face {
+  font-family: "OxygenLight";
+  src: url("/fonts/Oxygen-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "OxygenRegular";
+  src: url("/fonts/Oxygen-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "OxygenBold";
+  src: url("/fonts/Oxygen-Bold.ttf") format("truetype");
+}
+
+body {
+  font-family: "OxygenRegular", sans-serif;
+  background-color: map.get(theme.$palette, "background");
+  margin: 0;
+}

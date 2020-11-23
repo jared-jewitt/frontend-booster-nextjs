@@ -1,0 +1,19 @@
+node_modules
+build
+*.env*
+!.env.example
+
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDEs and editors
+.idea
+.vscode
+.project
+.classpath
+.settings
+.c9
+*.launch
+*.sublime-workspace

@@ -1,0 +1,11 @@
+@use "sass:map";
+@use "~@/utils/scss/variables/theme";
+
+.root {
+  padding: 16px 24px;
+  gap: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 1px solid map.get(theme.$palette, "divider");
+}
