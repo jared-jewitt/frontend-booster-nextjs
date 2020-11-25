@@ -10,7 +10,7 @@
     "lint": "prettier --write **/*.{tsx,ts,jsx,js} && eslint --fix **/*.{tsx,ts,jsx,js} && stylelint --fix **/*.{sass,scss,css}"
   },
   "dependencies": {
-    "next": "^10.0.2",
+    "next": "^10.0.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
@@ -20,8 +20,8 @@
     "@types/jest": "^26.0.15",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.8.1",
-    "@typescript-eslint/parser": "^4.8.1",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
     "cross-env": "^7.0.2",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
@@ -34,7 +34,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
     "jest-transform-stub": "^2.0.0",
-    "lint-staged": "^10.5.1",
+    "lint-staged": "^10.5.2",
     "prettier": "^2.2.0",
     "sass": "^1.29.0",
     "stylelint": "^13.8.0",

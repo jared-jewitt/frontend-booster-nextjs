@@ -6,7 +6,7 @@ exports[`Product page matches snapshot 1`] = `
     class="root"
   >
     <div
-      class="root"
+      class="root undefined"
     >
       <a
         href="/login"
@@ -15,26 +15,22 @@ exports[`Product page matches snapshot 1`] = `
       </a>
     </div>
     <main
-      class="main"
+      class="main product"
     >
-      <div
-        class="product"
-      >
-        <ul>
-          <li>
-            ID: 123
-          </li>
-          <li>
-            Title: Test product
-          </li>
-          <li>
-            Description: Foo bar baz
-          </li>
-          <li>
-            Price: $99.99
-          </li>
-        </ul>
-      </div>
+      <ul>
+        <li>
+          ID: 123
+        </li>
+        <li>
+          Title: Test product
+        </li>
+        <li>
+          Description: Foo bar baz
+        </li>
+        <li>
+          Price: $99.99
+        </li>
+      </ul>
     </main>
   </div>
 </DocumentFragment>

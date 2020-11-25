@@ -2,7 +2,7 @@ import React from "react";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { IProduct, products } from "@/constants";
 import { Page, Error } from "@/components";
-import styles from "./styles.module.scss";
+import styles from "@/pages/products/styles.module.scss";
 
 interface IProps {
   product: IProduct;
@@ -20,15 +20,13 @@ export default function Product({
   }
 
   return (
-    <Page title={`NextJS Boilerplate | Product #${product.id}`} description="Product page">
-      <div className={styles.product}>
-        <ul>
-          <li>ID: {product.id}</li>
-          <li>Title: {product.title}</li>
-          <li>Description: {product.description}</li>
-          <li>Price: ${product.price}</li>
-        </ul>
-      </div>
+    <Page className={styles.product} title={`NextJS Boilerplate | Product #${product.id}`} description="Product page">
+      <ul>
+        <li>ID: {product.id}</li>
+        <li>Title: {product.title}</li>
+        <li>Description: {product.description}</li>
+        <li>Price: ${product.price}</li>
+      </ul>
     </Page>
   );
 }

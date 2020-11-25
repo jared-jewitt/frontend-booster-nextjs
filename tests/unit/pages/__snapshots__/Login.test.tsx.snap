@@ -6,47 +6,47 @@ exports[`Login page matches snapshot 1`] = `
     class="root"
   >
     <div
-      class="root"
+      class="root undefined"
     >
+      <button>
+        Simulate Logout
+      </button>
       <a
-        href="/login"
+        href="/account"
       >
-        Login
+        Account
       </a>
     </div>
     <main
-      class="main"
+      class="main root"
     >
       <div
-        class="root"
-      >
-        <div
-          style="display: inline-block;
+        style="display: inline-block;
   max-width: 100%;
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
   margin: 0;"
-        >
-          <div
-            style="box-sizing: border-box;
+      >
+        <div
+          style="box-sizing: border-box;
   display: block;
   max-width: 100%;"
-          >
-            <img
-              alt=""
-              aria-hidden="true"
-              role="presentation"
-              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
-              style="max-width: 100%;
-  display: block;"
-            />
-          </div>
+        >
           <img
-            alt="Logo"
-            decoding="async"
-            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-            style="visibility: hidden;
+            alt=""
+            aria-hidden="true"
+            role="presentation"
+            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+            style="max-width: 100%;
+  display: block;"
+          />
+        </div>
+        <img
+          alt="Logo"
+          decoding="async"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          style="visibility: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -62,13 +62,12 @@ exports[`Login page matches snapshot 1`] = `
   max-width: 100%;
   min-height: 100%;
   max-height: 100%;"
-          />
-        </div>
-        <br />
-        <button>
-          Simulate Login
-        </button>
+        />
       </div>
+      <br />
+      <button>
+        Simulate Login
+      </button>
     </main>
   </div>
 </DocumentFragment>

@@ -6,7 +6,7 @@ exports[`Account page matches snapshot 1`] = `
     class="root"
   >
     <div
-      class="root"
+      class="root undefined"
     >
       <a
         href="/login"
@@ -15,26 +15,22 @@ exports[`Account page matches snapshot 1`] = `
       </a>
     </div>
     <main
-      class="main"
+      class="main root"
     >
-      <div
-        class="root"
-      >
-        <p>
-          My Account
-        </p>
-        <ul>
-          <li>
-            Email: foo.bar@baz.com
-          </li>
-          <li>
-            Display name: Foo Bar Baz
-          </li>
-          <li>
-            Date of Birth: 1990/01/01
-          </li>
-        </ul>
-      </div>
+      <p>
+        My Account
+      </p>
+      <ul>
+        <li>
+          Email: foo.bar@baz.com
+        </li>
+        <li>
+          Display name: Foo Bar Baz
+        </li>
+        <li>
+          Date of Birth: 1990/01/01
+        </li>
+      </ul>
     </main>
   </div>
 </DocumentFragment>

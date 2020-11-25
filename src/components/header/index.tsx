@@ -1,13 +1,17 @@
 import React from "react";
 import Link from "next/link";
 import { AuthContext } from "@/store";
-import styles from "./styles.module.scss";
+import styles from "@/components/header/styles.module.scss";
 
-export default function Header(): React.ReactElement {
+export interface IProps {
+  className?: string;
+}
+
+export default function Header({ className }: IProps): React.ReactElement {
   const { logout, state } = React.useContext(AuthContext);
 
   return (
-    <div className={styles.root}>
+    <div className={`${styles.root} ${className}`}>
       {state.isAuthenticated ? (
         <>
           <button disabled={state.isLoading} onClick={() => logout()}>

@@ -1,4 +1,4 @@
-@use "../variables/theme";
+@use "~@/scss/variables/theme";
 
 @mixin up($breakpoint) {
   @if map-has-key(theme.$breakpoints, $breakpoint) {

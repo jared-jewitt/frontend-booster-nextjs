@@ -1,9 +1,11 @@
 import React from "react";
 import { RenderResult, render } from "@testing-library/react";
 import { AuthProvider } from "@/store";
+import { Cookie } from "@/utils";
 
 const AllTheProviders = ({ children }) => {
-  return <AuthProvider isAuthenticated={false}>{children}</AuthProvider>;
+  const isAuthenticated = JSON.parse(Cookie.get("isAuthenticated") || null) ?? false;
+  return <AuthProvider isAuthenticated={isAuthenticated}>{children}</AuthProvider>;
 };
 
 const customRender = (ui: React.ReactElement, options = {}): RenderResult => {

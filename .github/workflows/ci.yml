@@ -5,7 +5,7 @@ on:
     branches:
       - development
       - staging
-      - master
+      - production
 
 jobs:
   docker:

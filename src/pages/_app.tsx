@@ -3,7 +3,7 @@ import _App, { AppProps, AppContext, AppInitialProps } from "next/app";
 import { Guard, guards } from "@/constants";
 import { Cookie } from "@/utils";
 import { AuthProvider } from "@/store";
-import "@/index.scss";
+import "@/scss/index.scss";
 
 export default class extends _App<AppProps & { isAuthenticated: boolean }> {
   static async getInitialProps(appContext: AppContext): Promise<AppInitialProps & { isAuthenticated: boolean }> {
@@ -18,10 +18,11 @@ export default class extends _App<AppProps & { isAuthenticated: boolean }> {
     const isValidSharedRequest = guard === Guard.Shared;
 
     if (guard && !isValidPrivateRequest && !isValidPublicRequest && !isValidSharedRequest) {
+      const redirect = isAuthenticated ? "/products" : "/login";
       if (process.browser) {
-        await appContext.router.replace("/products");
+        await appContext.router.replace(redirect);
       } else {
-        appContext.ctx.res.writeHead(307, { Location: "/products" });
+        appContext.ctx.res.writeHead(307, { Location: redirect });
         appContext.ctx.res.end();
       }
     }

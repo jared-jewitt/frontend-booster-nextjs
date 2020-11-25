@@ -5,7 +5,7 @@ on:
     branches:
       - development
       - staging
-      - master
+      - production
 
 jobs:
   docker:
@@ -35,12 +35,12 @@ jobs:
           docker tag gcr.io/"${{ secrets.PROJECT_ID }}"/client:development gcr.io/"${{ secrets.PROJECT_ID }}"/client:staging
           docker push gcr.io/"${{ secrets.PROJECT_ID }}"/client:staging
 
-      - name: Pull, re-tag, and push image for master environment
-        if: ${{ github.ref == 'refs/heads/master' }}
+      - name: Pull, re-tag, and push image for production environment
+        if: ${{ github.ref == 'refs/heads/production' }}
         run: |
           docker pull gcr.io/"${{ secrets.PROJECT_ID }}"/client:staging
-          docker tag gcr.io/"${{ secrets.PROJECT_ID }}"/client:staging gcr.io/"${{ secrets.PROJECT_ID }}"/client:master
-          docker push gcr.io/"${{ secrets.PROJECT_ID }}"/client:master
+          docker tag gcr.io/"${{ secrets.PROJECT_ID }}"/client:staging gcr.io/"${{ secrets.PROJECT_ID }}"/client:production
+          docker push gcr.io/"${{ secrets.PROJECT_ID }}"/client:production
 
   terraform:
     name: Terraform

@@ -1,3 +1,3 @@
-export { default as Error } from "./error";
-export { default as Header } from "./header";
-export { default as Page } from "./page";
+export { default as Error } from "@/components/error";
+export { default as Header } from "@/components/header";
+export { default as Page } from "@/components/page";

@@ -26,9 +26,9 @@ are still some pre-requisites to fulfill before running your first deployment. P
    - Cloud Run Admin
    - Storage Admin
 
-   (Skip step 3 and click **"DONE"**)
+   (Skip step 3 and click _"DONE"_)
 
-5. You should now see your newly created Service Account in the table. Click on it, then click the "**ADD KEY**"
+5. You should now see your newly created Service Account in the table. Click on it, then click the _"ADD KEY"_
    dropdown, and create a new JSON key.
 
 6. Base64 encode the key that was just downloaded to your computer: `cat key.json | base64`.
@@ -43,17 +43,18 @@ are still some pre-requisites to fulfill before running your first deployment. P
 1. [Create an API token](https://app.terraform.io/app/settings/tokens). Copy this for a later step. **DO NOT** show
    this to anyone or check this into source control.
 
-2. [Create a new Organization](https://app.terraform.io/app/organizations/new).
+2. [Create a new Organization](https://app.terraform.io/app/organizations/new). Or use an existing organization if you
+   have a separate backend already set up.
 
-3. Create 3 workspaces for the organization - one for each environment (development, staging, master).
+3. Create 3 workspaces for the organization - one for each environment (development, staging, production).
 
    Use the settings below when creating each workspace:
 
-   - Choose Type: **"CLI-driven workflow"**
+   - Choose Type: _"CLI-driven workflow"_
    - Configure settings:
-     - Workspace Name: `<client-development|client-staging|client-master>`
+     - Workspace Name: `<client-development|client-staging|client-production>`
 
-4. For each workspace, select _Settings / General_, and set the Terraform version to `0.13.0` and click **"Save settings"**.
+4. For each workspace, select _Settings / General_, and set the Terraform version to `0.13.0` and click _"Save settings"_.
 
 5. For each workspace, select _Variables_, and add the following variables under _Terraform Variables_:
 
@@ -65,10 +66,10 @@ are still some pre-requisites to fulfill before running your first deployment. P
    service_account_key = <service_account_key>
 
    # ☐ HCL ☐ Sensitive
-   service_name = <client-development|client-staging|client-master>
+   service_name = <client-development|client-staging|client-production>
 
    # ☐ HCL ☐ Sensitive
-   image_tag = <development|staging|master>
+   image_tag = <development|staging|production>
    
    # ✅ HCL ✅ Sensitive
    # These are your application environment variables. Check the .env.example file for reference.
@@ -86,7 +87,7 @@ are still some pre-requisites to fulfill before running your first deployment. P
 
 1. Navigate to your GitHub repository and create the following branches:
 
-   - `master`
+   - `production` (default)
    - `staging`
    - `development`
 
@@ -104,10 +105,10 @@ are still some pre-requisites to fulfill before running your first deployment. P
    Once you are satisfied with the state of your application in the development environment, you can continue the
    [git flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) process via making another
    pull request from `development -> staging`. And again, once you are satisfied with the application state in the
-   staging environment, make another pull request from `staging -> master`.
+   staging environment, make another pull request from `staging -> production`.
 
    **Please note**: [Terraform plan](https://www.terraform.io/docs/commands/plan.html) will fail for your first
-   pull request to `development`, `staging`, and `master`. This is because Terraform is looking for an image to use
+   pull request to `development`, `staging`, and `production`. This is because Terraform is looking for an image to use
    for the plan. This image doesn't get built and pushed until merge. That being said, it is still fine to merge your
    PR in this state. The application will still deploy on merge since the image gets created and pushed right before
    [Terraform apply](https://www.terraform.io/docs/commands/apply.html). Subsequent pull requests to these branches

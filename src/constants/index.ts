@@ -1,2 +1,2 @@
-export * from "./products";
-export * from "./guards";
+export * from "@/constants/products";
+export * from "@/constants/guards";
