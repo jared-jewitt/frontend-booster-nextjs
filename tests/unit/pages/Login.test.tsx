@@ -5,7 +5,7 @@ import { render } from "../../utils";
 
 describe("Login page", () => {
   beforeAll(() => {
-    Cookie.set("isAuthenticated", true, { days: 7, path: "/" });
+    Cookie.delete("isAuthenticated", { path: "/" });
   });
 
   it("matches snapshot", () => {

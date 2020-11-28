@@ -14,7 +14,7 @@ However, that being said, it can still be used completely on its own - CI/CD and
 
 - 👏🏼 Next 10
 - ⚛️ React 17
-- ⛑️Type safety via TypeScript
+- ⛑️ Type safety via TypeScript
 - 🔐 Private, public, and shared routes
 - 💄 Write SCSS & future CSS with PostCSS + preset-env
 - 🎯 Browserslist for specific browser support

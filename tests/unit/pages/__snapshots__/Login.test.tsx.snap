@@ -8,13 +8,10 @@ exports[`Login page matches snapshot 1`] = `
     <div
       class="root undefined"
     >
-      <button>
-        Simulate Logout
-      </button>
       <a
-        href="/account"
+        href="/login"
       >
-        Account
+        Login
       </a>
     </div>
     <main
