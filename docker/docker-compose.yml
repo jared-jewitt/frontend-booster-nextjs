@@ -1,0 +1,18 @@
+version: "3.8"
+
+# Base Services Definition
+services:
+  client:
+    container_name: ${COMPOSE_PROJECT_NAME}_client
+    build:
+      context: ..
+    volumes:
+      - "../:/usr/src/app"
+      - "/usr/src/app/node_modules"
+    networks:
+      - default
+
+# Base Networks Definition
+networks:
+  default:
+    driver: bridge

@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "~@/scss/variables/theme";
+@use "./variables/theme";
 
 @font-face {
   font-family: "OxygenLight";
@@ -17,7 +17,7 @@
 }
 
 body {
-  font-family: "OxygenRegular", sans-serif;
+  font-family: "OxygenRegular", sans-serif !important;
   background-color: map.get(theme.$palette, "background");
   margin: 0;
 }

@@ -1,10 +1,10 @@
 import React from "react";
-import Context, { IContext } from "@/store/auth/context";
+import Context, { Context as IContext } from "./context";
 
-export interface IProps {
+export interface Props {
   children: (value: IContext) => React.ReactNode;
 }
 
-export default function AuthConsumer({ children }: IProps): React.ReactElement {
+export default function AuthConsumer({ children }: Props): React.ReactElement {
   return <Context.Consumer>{(value) => children(value)}</Context.Consumer>;
 }

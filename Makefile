@@ -1,17 +1,18 @@
-#!make
+export COMPOSE_FILE ?= docker/docker-compose.yml:docker/docker-compose.ci.yml
+export COMPOSE_PROJECT_NAME ?= frontend-booster-nextjs
 
-run:
-	@echo "Launching the client..."
+up:
+	$(info Launching the client...)
 	@docker-compose up
 
-close:
-	@echo "Closing the client..."
+down:
+	$(info Removing the client containers...)
 	@docker-compose down
 
-purge:
-	@echo "Purging client containers, images, networks, volumes..."
+nuke:
+	$(info Purging all client containers, images, networks, volumes...)
 	@docker-compose down -v --rmi all
 
-workspace:
-	@echo "Shelling into the client..."
-	@docker-compose exec client sh
+bash:
+	$(info Shelling into the client...)
+	@docker-compose exec client bash

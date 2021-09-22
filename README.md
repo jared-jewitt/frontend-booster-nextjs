@@ -2,17 +2,16 @@
 
 This codebase is a NextJS boilerplate. It is intended to be used as a
 [Booster](https://github.com/jared-jewitt/booster-guidelines) for my [Launchpad](https://github.com/jared-jewitt/launchpad).
-However, that being said, it can still be used completely on its own - CI/CD and infrastructure (IaC) come pre-configured.
+However, that being said, it can still be used completely on its own.
 
 #### Requirements:
 
-- [Docker](https://www.docker.com/) (Optional)
-- [Node](https://nodejs.org/en/) (Required - unless Docker is used)
-- [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (Optional - only for Windows users)
+- [Docker](https://www.docker.com/)
+- [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) - Only for Windows users
 
 #### Features:
 
-- 👏🏼 Next 10
+- 👏🏼 Next 11
 - ⚛️ React 17
 - ⛑️ Type safety via TypeScript
 - 🔐 Private, public, and shared routes
@@ -20,56 +19,52 @@ However, that being said, it can still be used completely on its own - CI/CD and
 - 🎯 Browserslist for specific browser support
 - 🖊 Add SVGs, images, and custom fonts
 - 🌎 Path aliasing for streamlined imports
-- 🌈 Prettier for consistent code style
-- 👀 Lint your code with ESLint & StyleLint
+- 🌈 Prettier + ESLint + StyleLint for consistent code style
 - 🐺 Husky + lint-staged for code quality assurance
-- 🧪 Jest + React Testing Library for tests
+- 🧪 Mocha + Cypress for unit and integration tests
 
 #### Developers:
 
 - [Jared Jewitt](https://jared-jewitt.github.io/)
 
-## 🏃 Getting Started
+---
 
-Run the frontend via either option below, then visit the client at `http://localhost:3000`
+### 🏃 Getting Started
 
-**_Docker:_**
-
-```
-make run
-```
-
-**_NPM:_**
+Starting the fully-fledged frontend is as simple as running the command below. Once done, visit the app 
+at `http://localhost:3000` and immediately begin creating something awesome :)
 
 ```
-npm install
-npm run dev
+make up
 ```
 
-## ⌨️ Commands
+### ⌨️ Commands
 
-**_Docker:_**
+###### Make
 
-| Command        | Description                                                         |
-| -------------- | ------------------------------------------------------------------- |
-| make run       | Launches the client                                                 |
-| make close     | Closes the client                                                   |
-| make purge     | Purges the client containers, images, networks, volumes             |
-| make workspace | Shells into the client to run one-off commands. e.g. `npm run test` |
+| Command   | Description                                                         |
+| --------- | ------------------------------------------------------------------- |
+| make up   | Launches the client                                                 |
+| make down | Removes the client containers                                       |
+| make nuke | Purges all client containers, images, networks, volumes             |
+| make bash | Shells into the client to run one-off commands. e.g. `npm run test` |
 
-**_NPM:_**
+###### NPM
 
-| Command      | Description                                                   |
-| ------------ | ------------------------------------------------------------- |
-| npm run prod | Builds and runs the client on $PORT &#124;&#124; 4000         |
-| npm run dev  | Runs the client with hot reloading on $PORT &#124;&#124; 3000 |
-| npm run test | Runs the suite of Jest tests                                  |
-| npm run lint | Runs Prettier, ESLint, and StyleLint formatters               |
+| Command                           | Description                                                                 |
+| --------------------------------- | --------------------------------------------------------------------------- |
+| npm run build                     | Bundles the app into a single `build` folder                                |
+| npm run prod                      | Runs the client on $PORT &#124;&#124; 3002 (must run `npm run build` first) |
+| npm run dev                       | Runs the client with hot reloading on $PORT &#124;&#124; 3000               |
+| npm run test                      | Runs the suite of unit and integration tests                                |
+| npm run test:unit                 | Runs the suite of unit tests                                                |
+| npm run test:integration          | Runs the suite of integration tests with real browser interactivity         |
+| npm run test:integration:headless | Runs the suite of integration tests in headless mode                        |
 
-## 🚀 Deployment
+### 🚀 Deployment
 
 [Instructions here](DEPLOYMENT.md).
 
-## ⚖️ License
+### ⚖️ License
 
 Code released under the [MIT License](LICENSE).

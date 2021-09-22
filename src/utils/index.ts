@@ -1,1 +1,1 @@
-export * from "@/utils/cookie";
+export * from "./cookie";

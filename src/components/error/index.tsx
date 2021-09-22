@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "@/components/error/styles.module.scss";
+import styles from "./styles.module.scss";
 
-export interface IProps {
+export interface Props {
   className?: string;
   children: React.ReactNode;
 }
 
-export default function Error({ className, children }: IProps): React.ReactElement {
+export default function Error({ className, children }: Props): React.ReactElement {
   return <div className={`${styles.root} ${className}`}>{children}</div>;
 }

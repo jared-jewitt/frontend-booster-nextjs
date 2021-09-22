@@ -1,6 +1,6 @@
 import React from "react";
 import { Page } from "@/components";
-import styles from "@/pages/account/styles.module.scss";
+import styles from "./styles.module.scss";
 
 export default function Account(): React.ReactElement {
   return (

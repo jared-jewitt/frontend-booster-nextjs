@@ -1,0 +1,34 @@
+steps:
+  #################################################################
+  # Re-tag
+  #################################################################
+  - name: "gcr.io/cloud-builders/docker"
+    args: [
+      "tag",
+      "gcr.io/$PROJECT_ID/client:development",
+      "gcr.io/$PROJECT_ID/client:production"
+    ]
+
+  #################################################################
+  # Push
+  #################################################################
+  - name: "gcr.io/cloud-builders/docker"
+    args: [
+      "push",
+      "gcr.io/$PROJECT_ID/client"
+    ]
+
+  #################################################################
+  # Deploy
+  #################################################################
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: "gcloud"
+    args: [
+      "run",
+      "deploy",
+      "client-production",
+      "--allow-unauthenticated",
+      "--platform", "managed",
+      "--region", "us-central1",
+      "--image", "gcr.io/$PROJECT_ID/client:production"
+    ]
