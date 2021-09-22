@@ -1,3 +1,9 @@
 {
-  "*": "npm run lint"
+  "**/*.{tsx,ts}": [
+    "prettier --write **/*.{tsx,ts}",
+    "eslint --fix **/*.{tsx,ts}"
+  ],
+  "**/*.{sass,scss,less}": [
+    "stylelint --fix **/*.{sass,scss,less}"
+  ]
 }

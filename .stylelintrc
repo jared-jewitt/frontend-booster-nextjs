@@ -1,10 +1,13 @@
 {
-  "extends": ["stylelint-config-sass-guidelines"],
-  "plugins": ["stylelint-scss"],
+  "plugins": [
+    "stylelint-less"
+  ],
+  "extends": [
+    "stylelint-config-standard"
+  ],
   "rules": {
     "string-quotes": "double",
     "color-hex-case": "upper",
-    "color-hex-length": "long",
-    "order/properties-alphabetical-order": null
+    "color-hex-length": "long"
   }
 }

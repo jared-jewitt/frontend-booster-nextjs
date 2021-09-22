@@ -1,10 +1,10 @@
 import React from "react";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import { IProduct, products } from "@/constants";
+import { Product as IProduct, PRODUCTS } from "@/constants";
 import { Page, Error } from "@/components";
-import styles from "@/pages/products/styles.module.scss";
+import styles from "./styles.module.scss";
 
-interface IProps {
+interface Props {
   product: IProduct;
 }
 
@@ -31,9 +31,9 @@ export default function Product({
   );
 }
 
-export const getServerSideProps: GetServerSideProps<IProps> = async ({ query }) => {
+export const getServerSideProps: GetServerSideProps<Props> = async ({ query }) => {
   const { id } = query;
-  const product = products.find((p) => p.id == (id as unknown)) || null;
+  const product = PRODUCTS.find((p) => p.id == (id as unknown)) || null;
 
   return {
     props: {

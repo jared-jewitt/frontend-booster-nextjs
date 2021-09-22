@@ -1,16 +1,16 @@
 import React from "react";
 import _App, { AppProps, AppContext, AppInitialProps } from "next/app";
 import { Guard, guards } from "@/constants";
-import { Cookie } from "@/utils";
+import { cookie } from "@/utils";
 import { AuthProvider } from "@/store";
-import "@/scss/index.scss";
+require("@/scss/global.scss");
 
 export default class extends _App<AppProps & { isAuthenticated: boolean }> {
   static async getInitialProps(appContext: AppContext): Promise<AppInitialProps & { isAuthenticated: boolean }> {
     const initialProps = await _App.getInitialProps(appContext);
 
     const isAuthenticated = process.browser
-      ? JSON.parse(Cookie.get("isAuthenticated") || null) ?? false
+      ? JSON.parse(cookie.get("isAuthenticated") || null) ?? false
       : JSON.parse(appContext.ctx.req["cookies"]?.isAuthenticated || null) ?? false;
     const guard = guards[appContext.ctx.pathname];
     const isValidPrivateRequest = isAuthenticated && guard === Guard.Private;

@@ -1,16 +1,16 @@
 import React from "react";
 import Head from "next/head";
 import { Header } from "@/components";
-import styles from "@/components/page/styles.module.scss";
+import styles from "./styles.module.scss";
 
-interface IProps {
+interface Props {
   title: string;
   description: string;
   className?: string;
   children: React.ReactNode;
 }
 
-export default function Page({ title, description, className, children }: IProps): React.ReactElement {
+export default function Page({ title, description, className, children }: Props): React.ReactElement {
   return (
     <>
       <Head>

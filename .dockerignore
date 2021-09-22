@@ -1,2 +1,11 @@
 node_modules
 build
+google-cloud-build
+docker
+.git
+.gitignore
+.dockerignore
+Makefile
+DEPLOYMENT.md
+README.md
+LICENSE

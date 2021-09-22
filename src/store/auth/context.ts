@@ -1,13 +1,13 @@
 import React from "react";
-import { IState } from "@/store/auth/provider";
+import { State } from "./provider";
 
-export interface IContext {
+export interface Context {
   login: () => void;
   logout: () => void;
-  state: IState;
+  state: State;
 }
 
-export default React.createContext<IContext>({
+export default React.createContext<Context>({
   login: () => null,
   logout: () => null,
   state: null,

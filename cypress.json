@@ -1,0 +1,9 @@
+{
+  "downloadsFolder": "tests/integration/downloads",
+  "fixturesFolder": "tests/integration/fixtures",
+  "integrationFolder": "tests/integration/scenarios",
+  "screenshotsFolder": "tests/integration/screenshots",
+  "videosFolder": "tests/integration/videos",
+  "pluginsFile": "tests/integration/plugins/index.ts",
+  "supportFile": "tests/integration/support/index.ts"
+}

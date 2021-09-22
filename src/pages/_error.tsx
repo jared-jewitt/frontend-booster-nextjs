@@ -12,7 +12,7 @@ export default class extends _Error<ErrorProps> {
   render(): React.ReactElement {
     const { statusCode } = this.props;
     return (
-      <Page title={`NextJS Boilerplate | ${statusCode || "Unexpected error"}`} description="Unexpected error page">
+      <Page title={`NextJS Boilerplate | ${statusCode || "Unexpected error"}`} description="Unexpected error">
         <Error>
           {statusCode
             ? `${statusCode} - An unexpected error occurred on the server`

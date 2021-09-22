@@ -1,0 +1,14 @@
+# Compose runtime environment variables
+x-client-variables: &client-variables
+  PORT: ${PORT:-3001}
+
+# Extended Services Definition
+services:
+  client:
+    image: ${COMPOSE_PROJECT_NAME}_client:ci
+    build:
+      dockerfile: docker/Dockerfile-client.ci
+    ports:
+      - ${PORT:-3001}:${PORT:-3001}
+    environment:
+      <<: *client-variables
