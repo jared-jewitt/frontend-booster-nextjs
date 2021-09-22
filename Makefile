@@ -1,4 +1,4 @@
-export COMPOSE_FILE ?= docker/docker-compose.yml:docker/docker-compose.ci.yml
+export COMPOSE_FILE ?= docker/docker-compose.yml:docker/docker-compose.local.yml
 export COMPOSE_PROJECT_NAME ?= frontend-booster-nextjs
 
 up:
