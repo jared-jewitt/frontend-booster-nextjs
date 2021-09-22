@@ -4,7 +4,7 @@ export enum Guard {
   Shared,
 }
 
-export const guards = {
+export const GUARDS = {
   "/account": Guard.Private,
   "/login": Guard.Public,
   "/products": Guard.Shared,
