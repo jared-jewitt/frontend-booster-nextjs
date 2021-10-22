@@ -2,7 +2,8 @@ steps:
   #################################################################
   # Re-tag
   #################################################################
-  - name: "gcr.io/cloud-builders/docker"
+  - id: "re-tag"
+    name: "gcr.io/cloud-builders/docker"
     args: [
       "tag",
       "gcr.io/$PROJECT_ID/client:development",
@@ -12,7 +13,8 @@ steps:
   #################################################################
   # Push
   #################################################################
-  - name: "gcr.io/cloud-builders/docker"
+  - id: "push"
+    name: "gcr.io/cloud-builders/docker"
     args: [
       "push",
       "gcr.io/$PROJECT_ID/client"
@@ -21,14 +23,14 @@ steps:
   #################################################################
   # Deploy
   #################################################################
-  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
-    entrypoint: "gcloud"
+  - id: "deploy"
+    name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
     args: [
-      "run",
-      "deploy",
-      "client-production",
+      "run", "deploy", "client-production",
       "--allow-unauthenticated",
       "--platform", "managed",
       "--region", "us-central1",
-      "--image", "gcr.io/$PROJECT_ID/client:production"
+      "--image", "gcr.io/$PROJECT_ID/client:production",
+      "--set-env-vars", "APP_ENV=${_APP_ENV}"
     ]

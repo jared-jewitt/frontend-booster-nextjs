@@ -1,4 +1,4 @@
-FROM node:14-slim
+FROM cypress/base:16
 WORKDIR /usr/src/app
 
 COPY package*.json ./

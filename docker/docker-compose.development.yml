@@ -1,0 +1,22 @@
+version: "3.9"
+
+# Services definition
+services:
+  client:
+    container_name: ${COMPOSE_PROJECT_NAME}_client
+    image: ${COMPOSE_PROJECT_NAME}_client:development
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile-client.development
+    ports:
+      - 4000:4000
+    volumes:
+      - "../:/usr/src/app"
+      - "/usr/src/app/node_modules"
+    networks:
+      - default
+
+# Networks definition
+networks:
+  default:
+    driver: bridge

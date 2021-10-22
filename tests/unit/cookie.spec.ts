@@ -1,6 +1,4 @@
 import { expect } from "chai";
-
-// @ts-ignore
 import { cookie } from "@/utils";
 
 Object.defineProperty(window.document, "cookie", {

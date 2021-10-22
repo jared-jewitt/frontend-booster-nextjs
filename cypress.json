@@ -1,9 +1,9 @@
 {
-  "downloadsFolder": "tests/integration/downloads",
-  "fixturesFolder": "tests/integration/fixtures",
-  "integrationFolder": "tests/integration/scenarios",
-  "screenshotsFolder": "tests/integration/screenshots",
-  "videosFolder": "tests/integration/videos",
-  "pluginsFile": "tests/integration/plugins/index.ts",
-  "supportFile": "tests/integration/support/index.ts"
+  "downloadsFolder": "tests/e2e/downloads",
+  "fixturesFolder": "tests/e2e/fixtures",
+  "integrationFolder": "tests/e2e/scenarios",
+  "screenshotsFolder": "tests/e2e/screenshots",
+  "videosFolder": "tests/e2e/videos",
+  "pluginsFile": "tests/e2e/plugins/index.ts",
+  "supportFile": "tests/e2e/support/index.ts"
 }

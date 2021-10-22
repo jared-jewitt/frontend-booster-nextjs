@@ -239,6 +239,6 @@ build
 .pnp.*
 
 # Cypress
-tests/integration/downloads
-tests/integration/screenshots
-tests/integration/videos
+tests/e2e/downloads
+tests/e2e/screenshots
+tests/e2e/videos

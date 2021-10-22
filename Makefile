@@ -1,9 +1,9 @@
-export COMPOSE_FILE ?= docker/docker-compose.yml:docker/docker-compose.local.yml
+export COMPOSE_FILE ?= docker/docker-compose.development.yml
 export COMPOSE_PROJECT_NAME ?= frontend-booster-nextjs
 
-up:
+client:
 	$(info Launching the client...)
-	@docker-compose up
+	@docker-compose up client
 
 down:
 	$(info Removing the client containers...)

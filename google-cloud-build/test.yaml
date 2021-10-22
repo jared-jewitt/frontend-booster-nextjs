@@ -1,8 +1,25 @@
 steps:
   #################################################################
+  # Build
+  #################################################################
+  - id: "build"
+    name: "docker/compose:1.29.2"
+    args: [
+      "run",
+      "client",
+      "npm",
+      "run",
+      "build"
+    ]
+    env:
+      - "COMPOSE_FILE=docker/docker-compose.test.yml"
+      - "COMPOSE_PROJECT_NAME=frontend-booster-nextjs"
+
+  #################################################################
   # Unit tests
   #################################################################
-  - name: "docker/compose:1.29.2"
+  - id: "test-unit"
+    name: "docker/compose:1.29.2"
     args: [
       "run",
       "client",
@@ -11,20 +28,21 @@ steps:
       "test:unit"
     ]
     env:
-      - "COMPOSE_FILE=docker/docker-compose.yml:docker/docker-compose.ci.yml"
+      - "COMPOSE_FILE=docker/docker-compose.test.yml"
       - "COMPOSE_PROJECT_NAME=frontend-booster-nextjs"
 
   #################################################################
-  # Integration tests
+  # End-to-end tests
   #################################################################
-  - name: "docker/compose:1.29.2"
+  - id: "test-e2e"
+    name: "docker/compose:1.29.2"
     args: [
       "run",
       "client",
       "npm",
       "run",
-      "test:integration:headless"
+      "test:e2e:headless"
     ]
     env:
-      - "COMPOSE_FILE=docker/docker-compose.yml:docker/docker-compose.ci.yml"
+      - "COMPOSE_FILE=docker/docker-compose.test.yml"
       - "COMPOSE_PROJECT_NAME=frontend-booster-nextjs"

@@ -1,18 +1,22 @@
-version: "3.8"
+version: "3.9"
 
-# Base Services Definition
+# Services definition
 services:
   client:
     container_name: ${COMPOSE_PROJECT_NAME}_client
+    image: ${COMPOSE_PROJECT_NAME}_client:production
     build:
       context: ..
+      dockerfile: docker/Dockerfile-client.production
+    ports:
+      - 4002:4002
     volumes:
       - "../:/usr/src/app"
       - "/usr/src/app/node_modules"
     networks:
       - default
 
-# Base Networks Definition
+# Networks definition
 networks:
   default:
     driver: bridge
