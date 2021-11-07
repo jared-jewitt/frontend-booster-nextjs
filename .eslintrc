@@ -24,6 +24,7 @@
     "react/display-name": 0,
     "react/prop-types": 0,
     "mocha/no-mocha-arrows": 0,
+    "mocha/max-top-level-suites": 0,
     "mocha/no-hooks-for-single-case": 0
   },
   "settings": {
