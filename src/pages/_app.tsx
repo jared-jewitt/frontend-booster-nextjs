@@ -1,9 +1,20 @@
 import React from "react";
+import Router from "next/router";
+import nprogress from "nprogress";
+import "nprogress/nprogress.css";
 import _App, { AppProps, AppContext, AppInitialProps } from "next/app";
 import { Guard, GUARDS } from "@/constants";
 import { cookie } from "@/utils";
 import { AuthProvider } from "@/store";
-require("@/scss/global.scss");
+import "@/scss/global.scss";
+
+nprogress.configure({
+  showSpinner: false,
+});
+
+Router.events.on("routeChangeStart", nprogress.start);
+Router.events.on("routeChangeComplete", nprogress.done);
+Router.events.on("routeChangeError", nprogress.done);
 
 export default class extends _App<AppProps & { isAuthenticated: boolean }> {
   static async getInitialProps(appContext: AppContext): Promise<AppInitialProps & { isAuthenticated: boolean }> {

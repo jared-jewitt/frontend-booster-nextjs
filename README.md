@@ -11,7 +11,7 @@ However, that being said, it can still be used completely on its own.
 
 #### Features:
 
-- 👏🏼 Next 11
+- 👏🏼 Next 12
 - ⚛️ React 17
 - ⛑️ Type safety via TypeScript
 - 🔐 Private, public, and shared routes

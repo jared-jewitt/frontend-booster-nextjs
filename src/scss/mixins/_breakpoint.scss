@@ -1,8 +1,10 @@
+@use "sass:map";
 @use "~@/scss/variables/theme";
 
 @mixin up($breakpoint) {
   @if map-has-key(theme.$breakpoints, $breakpoint) {
-    $breakpoint-value: map-get(theme.$breakpoints, $breakpoint);
+    $breakpoint-value: map.get(theme.$breakpoints, $breakpoint);
+
     @media (min-width: $breakpoint-value) {
       @content;
     }
@@ -13,7 +15,8 @@
 
 @mixin down($breakpoint) {
   @if map-has-key(theme.$breakpoints, $breakpoint) {
-    $breakpoint-value: map-get(theme.$breakpoints, $breakpoint);
+    $breakpoint-value: map.get(theme.$breakpoints, $breakpoint);
+
     @media (max-width: ($breakpoint-value - 1)) {
       @content;
     }

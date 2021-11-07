@@ -18,6 +18,7 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "jsx": "preserve",
+    "incremental": true,
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,

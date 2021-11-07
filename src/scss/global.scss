@@ -2,22 +2,22 @@
 @use "./variables/theme";
 
 @font-face {
-  font-family: "OxygenLight";
+  font-family: OxygenLight;
   src: url("/fonts/Oxygen-Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "OxygenRegular";
+  font-family: OxygenRegular;
   src: url("/fonts/Oxygen-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "OxygenBold";
+  font-family: OxygenBold;
   src: url("/fonts/Oxygen-Bold.ttf") format("truetype");
 }
 
 body {
-  font-family: "OxygenRegular", sans-serif !important;
+  font-family: OxygenRegular, sans-serif !important;
   background-color: map.get(theme.$palette, "background");
   margin: 0;
 }
