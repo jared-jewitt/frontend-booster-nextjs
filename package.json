@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky install",
-    "build": "webpack",
+    "build": "next build",
     "prod": "cross-env NODE_ENV=production PORT=${PORT:-4002} next start",
     "dev": "cross-env NODE_ENV=development PORT=${PORT:-4000} next dev",
     "test": "cross-env NODE_ENV=test PORT=${PORT:-4001} npm run test:unit && npm run test:e2e:headless",
